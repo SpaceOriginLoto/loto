@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>Space Origin Loto</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+  <div class='content'>
+    <image src='./img/logo.png' class="logo" />
+    <div class='number-grid'>
+      <div class="number">?</div>
+      <div class="number">?</div>
+      <div class="number">?</div>
+    </div>
+    <input type='button' id="roll" onclick="roll()" value="Lancer" />
+    <input type='button' id="stop" onclick="stop()" value="Stop"/>
+  </div>
+
+
+    <script type="text/javascript" >
+    document.querySelector('input#stop').style.display ='none';
+
+     function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    const div = document.querySelectorAll('div.number');
+    var isRolling = false;
+    const roll = async function(){
+      document.querySelector('input#roll').style.display ='none';
+      document.querySelector('input#stop').style.display ='inline';
+      isRolling = true;
+      while (isRolling===true){
+          var number = Math.floor((Math.random() * 20)+1);
+          div[0].innerHTML = number;
+          var number = Math.floor((Math.random() * 20)+1);
+          div[1].innerHTML = number;
+          var number = Math.floor((Math.random() * 20)+1);
+          div[2].innerHTML = number;
+          await sleep(100);
+        }
+    }
+
+    const stop = function(){
+      isRolling = false;
+      document.querySelector('input#roll').style.display ='inline';
+      document.querySelector('input#stop').style.display ='none';
+    }
+    </script>
+</body>
+</html>

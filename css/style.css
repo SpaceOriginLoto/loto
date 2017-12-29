@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+body {
+  background-image: url('../img/bg.jpg');
+  color: white;
+}
+
+.logo{
+  margin-top:10px;
+  position: relative;
+  width:80%;
+}
+
+.content {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.number-grid {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes flicker {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      opacity: random();
+    }
+  }
+}
+
+.number {
+  font-size: 56px;
+  line-height: 216px;
+  min-width: 213px;
+  height: 216px;
+  background: url('../img/item_bg.png');
+  float: left;
+  margin: 60px 27px 15px 0px;
+  font-family: 'Orbitron', sans-serif;
+  color:rgb(99, 255, 244);
+  display:block;
+}
+
+input[type='button'] {
+  margin-top: 60px;
+  font-family: 'Orbitron', sans-serif;
+  width: 244px;
+  height: 77px;
+  color: #49faff;
+  font-size: 26px;
+  background: url('../img/btn_bg.png');
+  border: none;
+  outline:none;
+}
+
+input[type='button']:hover {
+  color: #9cdcfa;
+  text-shadow: 0px 0px 100px #c1ebff;
+  background: url('../img/btnhover_bg.png');
+}
+
+input[type='button']:active {
+  color: #3784a8;
+  background: url('../img/btnonclick_bg.png');
+  text-shadow: 0px 0px 50px #49c4ff;
+}
